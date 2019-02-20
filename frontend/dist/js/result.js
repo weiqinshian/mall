@@ -1,0 +1,1 @@
+webpackJsonp([16],{0:function(t,r,n){t.exports=n(69)},11:function(t,r){},12:function(t,r,n){"use strict";n(11)},47:function(t,r){},69:function(t,r,n){"use strict";n(47),n(12);var e=n(1);$(function(){var t=e.getUrlParam("type")||"default",r=$("."+t+"-success"),n=e.getUrlParam("orderNo");if("payment"===t){var o=r.find(".orderNo");o.attr("href",o.attr("href")+n)}r.show()})}});

@@ -1,0 +1,19 @@
+/*
+* @Author: xw
+* @Date:   2017-06-19 23:19:58
+* @Last Modified by:   xw
+* @Last Modified time: 2017-06-21 23:41:19
+*/
+
+.form-line {
+	margin-bottom: 8px;
+    height: 30px;
+    line-height: 30px;
+    font-size: 14px;
+}
+
+.form-line .label {
+    display: inline-block;
+    width: 60px;
+    text-align: center;
+}

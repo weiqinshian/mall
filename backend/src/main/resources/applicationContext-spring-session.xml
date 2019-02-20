@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:tx="http://www.springframework.org/schema/tx" xmlns:jdbc="http://www.springframework.org/schema/jdbc"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="
+     http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+     http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+     http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd
+     http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd">
+    
+     <!-- 注入一个bean，这个bean的名字是redisHttpSessionConfiguration，类路径org.springframework.session.data.redis.config.annotation.web.http.RedisHttpSessionConfiguration -->
+    <bean id="redisHttpSessionConfiguration" class="org.springframework.session.data.redis.config.annotation.web.http.RedisHttpSessionConfiguration">
+        <property name="maxInactiveIntervalInSeconds" value="1800" />
+    </bean>
+
+    <bean id="defaultCookieSerializer" class="org.springframework.session.web.http.DefaultCookieSerializer">
+        <property name="domainName" value=".xwld.site" />
+        <property name="useHttpOnlyCookie" value="true" />
+        <property name="cookiePath" value="/" />
+        <property name="cookieMaxAge" value="31536000" />
+    </bean>
+
+    <bean id="jedisPoolConfig" class="redis.clients.jedis.JedisPoolConfig">
+        <property name="maxTotal" value="20"/>
+    </bean>
+
+    <!-- spring注入一个bean，这个bean的名字是jedisConnectionFactory,这个对象的创建又spring来帮我们创建，属性的赋值也是由spring来帮我们设置-->
+    <bean id="jedisConnectionFactory" class="org.springframework.data.redis.connection.jedis.JedisConnectionFactory">
+        <property name="hostName" value="47.106.172.105" />
+        <property name="port" value="6379" />
+        <property name="password" value ="xw_redis_123456789" /> 
+        <property name="poolConfig" ref="jedisPoolConfig" />
+    </bean>
+
+</beans>

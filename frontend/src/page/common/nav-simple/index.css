@@ -1,0 +1,20 @@
+/*
+* @Author: xw
+* @Date:   2017-06-15 16:29:45
+* @Last Modified by:   xw
+* @Last Modified time: 2017-06-19 15:43:01
+*/
+
+.nav-simple {
+    height: 60px;
+    line-height: 60px;
+    border-bottom: 1px solid #ddd;
+    background: #fff;
+}
+
+.nav-simple .logo {
+    font-size: 26px;
+    font-weight: bold;
+    color: #c60023;
+    text-decoration: none;
+}

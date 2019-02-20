@@ -1,0 +1,26 @@
+/*
+* @Author: xw
+* @Date:   2017-06-16 13:10:00
+* @Last Modified by:   xw
+* @Last Modified time: 2017-06-16 13:16:50
+*/
+
+.footer {
+    padding: 10px 0;
+}
+
+.footer .links {
+    text-align: center;
+    color: #666;
+    line-height: 30px;
+}
+
+.footer .link {
+    padding: 0 10px;
+}
+
+.footer .copyright {
+    text-align: center;
+    color: #666;
+    line-height: 30px;
+}
